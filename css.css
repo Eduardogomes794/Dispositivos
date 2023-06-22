@@ -1,238 +1,561 @@
 /*Formulando o efeito da Scroll*/
 
+
+
+
 body{
+
     padding: 0;
+
     margin: 0;
+
     color: #242424;
+
     font-family: sans-serif;
+
     word-wrap: break-word;
+
     overflow-wrap: break-word;
+
     overflow-x: hidden;
+
 }
+
+
+
 
 ::-webkit-scrollbar{
+
   visibility: hidden;
+
   width: 0px;
+
 }
+
+
+
 
 h1,h2{
+
     font-weight: 900;
+
     color: #000;
+
 }
+
+
+
 
 .wrapper{
+
     width: 100%;
+
     margin: 0 auto;
+
 }
+
+
+
 
 main{
+
     display: block;
+
     background-color: #FFF;
+
 }
+
+
+
 
 .container{
+
     width: 100%;
+
     max-width: 800px;
+
     margin: 0 auto;
-    padding: 0 20px;
+
+    padding: 0 15px;
+
 }
+
+
+
 
 section.module p{
+
     margin-bottom: 40px;
+
     text-align: justify;
+
 }
+
+
+
 
 section.module:last-child{
+
     margin-bottom: 0;
+
 }
+
+
+
 
 section.module h2{
+
     margin-bottom: 40px;
+
     font-size: 30px;
+
 }
+
+
+
 
 section.module.content{
+
     padding: 40px 0;
+
     background: #ece7d5;
+
 }
+
+
+
 
 section.module.parallax{
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     height: 115vh !important;
+
     width: 100%;
+
     position: relative;
+
     overflow: hidden;
+
     background-position: 50% 50%;
+
     background-repeat: no-repeat;
+
     background-attachment: fixed;
+
     background-size: cover;
+
     -webkit-background-size: cover;
+
   -moz-background-size: cover;
+
   -o-background-size: cover;
+
 }
+
+
+
 
 section.module.parallax:after{
+
     content: "";
+
     height: 100%;
+
     width: 100%;
+
     position: absolute;
+
     z-index: 8;
+
     background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+
     background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+
 }
+
+
+
 
 section.module.parallax-1{
+
     background-image: url(imagens/img1.jpg);
+
 }
+
+
+
 
 section.module.parallax-2{
+
     background-image: url(imagens/img2.jpg);
+
 }
+
+
+
 
 section.module.parallax-3{
+
     background-image: url(imagens/img3.jpg);
+
 }
 
+
+
+
 section.module.parallax h1{
+
     color: #FFF;
+
     text-align: center;
+
     font-size: 78px;
+
     z-index: 10;
+
     text-transform: uppercase;
+
 }
+
 section.module.content h2{
+
     font-size: 20px;
+
     text-transform: uppercase;
+
 }
+
 section.module.content p{
+
     font-size: 17px;
+
 }
+
+
+
 
 /*Colocando Text Effect */
 
+
+
+
 .titulo1, .titulo2, .titulo3{
+
     visibility: hidden;
+
 }
+
+
+
 
 /*CSS dos cards*/
 
+
+
+
 .cards{
+
   display: flex;
+
   flex-wrap: wrap;
+
   justify-content: center;
+
   gap: 50px;
+
   background-color: #ece7d5;
+
   padding-bottom: 50px;
+
 }
+
+
+
 
 .card{
+
   width: 555px;
+
   height: 450px;
+
   border-radius: 20px;
+
   overflow: hidden;
+
   position: relative;
+
 }
+
+
+
 
 .card-img{
+
   width: 100%;
+
   height: 100%;
+
   object-fit: cover;
+
   border-radius: 15px;
+
 }
+
+
+
 
 .card-body{
+
   width: 100%;
+
   height: 100%;
+
   top: 0;
+
   position: absolute;
+
   background: #0000004c;
+
   backdrop-filter: blur(1px);
+
   border-radius: 15px;
+
   color: #fff;
+
   padding: 30px;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   transition: 3s;
+
   right: -620px;
+
 }
+
+
+
 
 .card:hover .card-body{
+
   right: -40px;
+
 }
+
+
+
 
 .card-title{
+
   font-size: 50px;
+
   font-weight: 500;
+
   color: #fff;
+
 }
+
+
+
 
 /*.card-sub-title{
+
   text-transform: capitalize;
+
   font-size: 14px;
+
   font-weight: 300;
+
 }*/
 
+
+
+
 .card-info{
+
   font-size: 16px;
+
   line-height: 25px;
+
   margin: -6px 0;
+
   font-weight: 400;
+
   width: 95%;
+
 }
+
+
+
 
 /*Responsividade*/
 
+
+
+
 @media (max-width: 1100px) {
-    
+
+
+
+
   .container{
+
     width: 88%;
+
   }
-    .module.parallax h1{
-        font-size: 30px;
-    }
-    .card{
-  width: 380px;
-  height: 390px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
+
+
+
+
+  section.module.parallax h1{
+
+    font-size: 63px;
+
+  }
+
+
+
+
+
+  .card{
+
+    width: 370px;
+
+    height: 390px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+  }
+
+
+
+
 }
-}
+
+
+
 
 @media(max-width: 450px) {
 
+
+
+
+  section.module.parallax h1{
+
+    font-size: 44px;
+
+  }
+
+
+
+
+  section.module.parallax{
+
+    width: 99%;
+
+  }
+
+
+
+
+  section.module.content p{
+
+    margin-left: -3%;
+
+  }
+
+
+
+
+  .container{
+
+    width: 92.5%;
+
+  }
+
+
+
+
+
   /*CSS dos cards*/
 
+
+
+
 .card{
+
   width: 420px;
+
   height: 390px;
+
   border-radius: 20px;
+
   overflow: hidden;
+
   position: relative;
+
 }
+
+
+
 
 .card-title{
+
   font-size: 40px;
+
   font-weight: 500;
+
   color: #fff;
+
 }
+
+
+
 
 /*.card-sub-title{
+
   text-transform: capitalize;
+
   font-size: 14px;
+
   font-weight: 300;
+
 }*/
 
+
+
+
 .card-info{
+
   font-size: 14px;
+
   line-height: 25px;
+
   margin: -6px 0;
+
   font-weight: 400;
+
   width: 90%;
+
+  text-align: justify;
+
 }
+
+
+
 
 }
