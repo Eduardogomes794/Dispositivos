@@ -186,6 +186,13 @@ section.module.content p{
 
 /*Responsividade*/
 
+@media (max-width: 730px) {
+    
+  .container{
+    width: 95%;
+  }
+}
+
 @media(max-width: 450px) {
 
   /*CSS dos cards*/
