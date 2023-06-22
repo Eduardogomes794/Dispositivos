@@ -191,6 +191,16 @@ section.module.content p{
   .container{
     width: 88%;
   }
+    .module.parallax h1{
+        font-size: 40px;
+    }
+    .card{
+  width: 400px;
+  height: 390px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
 }
 
 @media(max-width: 450px) {
