@@ -10,6 +10,12 @@ body{
     overflow-x: hidden;
 }
 
+#tCurioso{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 5%;
+}
+
 ::-webkit-scrollbar{
   visibility: hidden;
   width: 0px;
