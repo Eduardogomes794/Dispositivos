@@ -192,10 +192,10 @@ section.module.content p{
     width: 88%;
   }
     .module.parallax h1{
-        font-size: 35px;
+        font-size: 30px;
     }
     .card{
-  width: 390px;
+  width: 380px;
   height: 390px;
   border-radius: 20px;
   overflow: hidden;
