@@ -8,7 +8,11 @@ body{
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow-x: hidden;
-    
+}
+
+::-webkit-scrollbar{
+  visibility: hidden;
+  width: 0px;
 }
 
 h1,h2{
@@ -35,6 +39,7 @@ main{
 
 section.module p{
     margin-bottom: 40px;
+    text-align: justify;
 }
 
 section.module:last-child{
@@ -55,7 +60,7 @@ section.module.parallax{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh !important;
+    height: 115vh !important;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -112,260 +117,105 @@ section.module.content p{
     visibility: hidden;
 }
 
-/*Código do Slider*/
+/*CSS dos cards*/
 
-/******* Fonts Import Start **********/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-/********* Fonts Face CSS End **********/
-
-h3 {
-  margin: 0 0 10px;
-  font-size: 28px;
-  line-height: 36px;
-}
-
-/******* Middle section CSS Start ******/
-/* -------- Landing page ------- */
-.game-section {
-  padding: 60px 50px;
-  user-select: none;
-}
-.game-section .owl-stage {
-  margin: 15px 0;
+.cards{
   display: flex;
-  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  background-color: #ece7d5;
+  padding-bottom: 50px;
 }
-.game-section .item {
-  margin: 0 15px 60px;
-  width: 320px;
-  height: 400px;
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
-  background: #343434 no-repeat center center / cover;
-  border-radius: 16px;
+
+.card{
+  width: 555px;
+  height: 450px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
 
-.game-section .item.active {
-  width: 500px;
-  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}
-.game-section .item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 100%;
+.card-img{
   width: 100%;
-  left: 0;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-body{
+  width: 100%;
+  height: 100%;
   top: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-.game-section .item-desc {
-  padding: 0 24px 12px;
+  position: absolute;
+  background: #0000004c;
+  backdrop-filter: blur(1px);
+  border-radius: 15px;
   color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-.game-section .item.active .item-desc {
-  transform: none;
-  -webkit-transform: none;
-}
-.game-section .item-desc p {
-  opacity: 0;
-  -webkit-transform: translateY(32px);
-  transform: translateY(32px);
-  transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
-}
-.game-section .item.active .item-desc p {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-.game-section .owl-theme.custom-carousel .owl-dots {
-  visibility: hidden;
-}
-/******** Middle section CSS End *******/
-
-/***** responsive css Start ******/
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px;
-  }
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 260px;
-    height: 360px;
-  }
-  .game-section .item.active {
-    width: 400px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 46px));
-    -webkit-transform: translateY(calc(100% - 46px));
-  }
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 3s;
+  right: -620px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-  .line-title {
-    width: 330px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px 40px;
-  }
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 240px;
-    height: 330px;
-  }
-  .game-section .item.active {
-    width: 360px;
-  }
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
+.card:hover .card-body{
+  right: -40px;
 }
 
-@media (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-  h2 {
-    margin-bottom: 20px;
-  }
-  h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }
-  .line-title {
-    width: 250px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 30px 15px 20px;
-  }
-  .game-section .item {
-    margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
-  }
-  .game-section .item.active {
-    width: 270px;
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-  }
-  .game-section .item-desc {
-    padding: 0 14px 5px;
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
+.card-title{
+  font-size: 50px;
+  font-weight: 500;
+  color: #fff;
 }
 
-.owl-prev{
-    position: absolute;
-    margin-top: -5%;
-    margin-left: -1%;
-    font-size: 80px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-}
-.owl-next{
-    position: absolute;
-    margin-top: -5%;
-    margin-left: 92%;
-    font-size: 80px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
+/*.card-sub-title{
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 300;
+}*/
+
+.card-info{
+  font-size: 16px;
+  line-height: 25px;
+  margin: -6px 0;
+  font-weight: 400;
+  width: 95%;
 }
 
 /*Responsividade*/
 
 @media(max-width: 450px) {
-  
 
-  .container{
+  /*CSS dos cards*/
 
-    width: 94%;
-
-  }
-
-  section.module.parallax h1{
-    color: #FFF;
-    box-shadow: 15px solid blue;
-    text-align: center;
-    font-size: 50px;
-    z-index: 10;
-    text-transform: uppercase;
-}
-
-section.module.parallax{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh !important;
-  width: 100%;
+.card{
+  width: 420px;
+  height: 390px;
+  border-radius: 20px;
+  overflow: hidden;
   position: relative;
-
 }
 
-section.module.parallax:after{
-  content: "";
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 8;
-  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
-  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100%);
+.card-title{
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
 }
 
-.owl-prev{
-  margin-top: -10%;
-}
+/*.card-sub-title{
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 300;
+}*/
 
-.owl-next{
-  margin-top: -10%;
-  margin-left: 84%;
+.card-info{
+  font-size: 14px;
+  line-height: 25px;
+  margin: -6px 0;
+  font-weight: 400;
+  width: 90%;
 }
 
 }
